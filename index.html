@@ -1338,7 +1338,9 @@
 		});
 	</script>
 	<script type="text/javascript">
-		if ('serviceWorker' in navigator) {
+		$(document).ready(function(){
+
+			if ('serviceWorker' in navigator) {
 			window.addEventListener('load', function() {
 		    navigator.serviceWorker.register('/sw.js').then(function(registration) {
 		      // Registration was successful
@@ -1349,6 +1351,7 @@
     });
   });
 }
+		})
 	</script>
 
 </body>
