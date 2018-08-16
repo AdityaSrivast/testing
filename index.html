@@ -1275,6 +1275,23 @@
 		<!-- footer section ends -->
 
 	</div>
+
+	<script>
+		$(document).ready(function(){
+
+			if ('serviceWorker' in navigator) {
+			window.addEventListener('load', function() {
+		    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+		      // Registration was successful
+		      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+		    }, function(err) {
+		      // registration failed :(
+      		console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+		})
+	</script>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/1.0.0/typewriter.min.js"></script>
@@ -1337,22 +1354,5 @@
 			$('.materialboxed').materialbox();
 		});
 	</script>
-	<script>
-		$(document).ready(function(){
-
-			if ('serviceWorker' in navigator) {
-			window.addEventListener('load', function() {
-		    navigator.serviceWorker.register('/sw.js').then(function(registration) {
-		      // Registration was successful
-		      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-		    }, function(err) {
-		      // registration failed :(
-      		console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
-		})
-	</script>
-
 </body>
 </html>
